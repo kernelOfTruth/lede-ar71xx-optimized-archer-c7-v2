@@ -1,7 +1,7 @@
-# TP-Link Archer C7 V2 AC1750 Optimized LEDE Firmware
+# TP-Link Archer C7 V4 AC1750 Optimized LEDE Firmware
 
 ## Features
-- Extended & optimized build for [TP-Link Archer C7 V2](https://lede-project.org/toh/hwdata/tp-link/tp-link_archer_c7_ac1750_v2.0) only based on [latest LEDE trunk source](https://git.lede-project.org/?p=source.git)
+- Extended & optimized build for [TP-Link Archer C7 V4](https://lede-project.org/toh/hwdata/tp-link/tp-link_archer_c7_v4) only based on [latest LEDE trunk source](https://git.lede-project.org/?p=source.git)
 - Baked using latest GCC version 7.2 with -O3, 24kc, binutils 2.29.1 and various patches to maximize performance
 - LuCI SSL Web Interface
 - VPN ready (OpenVPN, L2TP, IPSec, GRE, IPIP, PPTP)
@@ -21,6 +21,12 @@
 - BCP38 anti spoofing
 - Advanced statistics (graphs)
 - vim, nano, tcpdump-mini, htop, rsync, iproute2, ipset, wget, curl, ethtool, dmesg, grep, tar & many more
+- Partition management tools (blkid, cfdisk, lvm2)
+- Harddrive management tools (hdparm, smartmontools)
+- Filesystem maintenance tools (btrfs-progs, dosfstools, e2fsprogs, tune2fs, xfs-fsck, xfs-growfs, xfs-mkfs, ntfs-3g)
+- Encrypted partition/harddrive handling (cryptsetup-openssl)
+- Throughput monitoring [via CLI] (iftop)
+- Wireguard support (non-tested)
 
 ## FAQ
 **Can I block ads with this firmware?**
@@ -29,7 +35,7 @@ Yes! Open `/etc/config/dnscrypt-proxy` with `nano` or `vim` and change `option r
 
 **Do you offer any quality assurance?**
 
-Sort of. I push releases manually after testing the builds on my own C7, which prevents major issues with the releases you can find here. The nightly builds are untested!
+Sort of. I push releases manually after testing the builds on my own C7, which prevents major issues with the releases you can find here. (no nightly builds)
 
 **My clients are unable to connect to the internet after flashing this firmware!**
 
@@ -38,6 +44,7 @@ Just reboot your router once and it should work. If it still doesn't work, make 
 **Can I get this firmware even faster?**
 
 Yes. If you don't use PPPoE or another tunneling protocol, you can remove the line `option mtu_fix 1` in `/etc/config/firewall` to squeeze out another 20-30Mbps.
+In my case (kernelOfTruth) it even made a difference of night and day (e.g. 170 Mbps or 270 Mbps vs. 430 Mbps)
 
 ## Changelog
 - 2018-02-04
