@@ -40,6 +40,19 @@ Just reboot your router once and it should work. If it still doesn't work, make 
 Yes. If you don't use PPPoE or another tunneling protocol, you can remove the line `option mtu_fix 1` in `/etc/config/firewall` to squeeze out another 20-30Mbps.
 
 ## Changelog
+- 2018-02-04
+  - Added partition management tools (blkid, cfdisk, lvm2)
+  - Added harddrive management tools (hdparm, smartmontools)
+  - Added filesystem maintenance tools (btrfs-progs, dosfstools, e2fsprogs, tune2fs, xfs-fsck, xfs-growfs, xfs-mkfs, ntfs-3g)
+  - exfat-utils is NOT available, so NOT included
+  - Added encryption handling (cryptsetup-openssl)
+  - Added throughput monitoring [via CLI] (iftop)
+  - Added wireguard support, tcpbridge app
+  - Added additional NLS "codepages" (cp850, cp852, iso8859-15)
+  - Added luci support for wireguard, dnscrypt
+  - removed usb-storage-uas (doesn't work on desktop for me, so there's no indication it'll work on the router; also: no usb 3.0)
+  - removed the Archer C7 v2 build to avoid confusion and accidental flashing on v4 (yep, "shit happens", so let's avoid it)
+  - Upstream updates
 - 2017-12-08
   - Fixed compilation issues (odhcpd-ipv6only was "magically" added by upstream updates and caused conflicts)
   - Added rfkill support (might fix 5GHz issues, credits to @cliobrando)
